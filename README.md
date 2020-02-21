@@ -4,9 +4,6 @@ Este projeto foi criado utilizando o Angular CLI. Para simular a API do back-end
 
 Abaixo seguem os comandos a serem executados após o clone do projeto:
 
-- npm install -g @angular/cli (caso ainda não tenha instalado o angular cli)
-- npm install -g json-server (caso ainda não tenha instalado o json-server)
-
 - npm install (para criação da pasta com todos os módulos do nodejs)
 - ng serve --open (executar dentro da pasta raiz do projeto, irá startar o servidor local na porta 4200)
 - json-server database.json -m ./node_modules/json-server-auth (executar em nova aba do terminal e também dentro da pasta raiz do projeto, irá startar a api back-end na porta 3000)
