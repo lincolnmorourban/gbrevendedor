@@ -8,4 +8,6 @@ Abaixo seguem os comandos a serem executados após o clone do projeto:
 - ng serve --open (executar dentro da pasta raiz do projeto, irá startar o servidor local na porta 4200)
 - json-server database.json -m ./node_modules/json-server-auth (executar em nova aba do terminal e também dentro da pasta raiz do projeto, irá startar a api back-end na porta 3000)
 
+ - npm install -g json-server (caso o comando acima não tenha funcionado, instalar o json-server dentro da pasta do projeto)
+
 Obs: Os dados para simular a api do back-end encontram-se no arquivo database.json na pasta raiz do projeto.
