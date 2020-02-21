@@ -1,0 +1,57 @@
+<div class="columns is-centered is-multiline">
+    <div class="box">
+
+        <div class="columns">
+            <div class="column is-12">
+                <h4 class="subtitle has-text-centered">Cadastrar nova compra</h4>
+            </div>
+        </div>
+
+        <form [formGroup]="compraForm" class="form" (submit)="cadastrarCompra()">
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <input #codigoInput formControlName="codigoCompra" placeholder="Código da compra" class="input"
+                            autofocus>
+                        <gb-message *ngIf="compraForm.get('codigoCompra').errors?.required"
+                            text="O código da compra é obrigatório!">
+                        </gb-message>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <input type="date" formControlName="dataCompra" placeholder="Data da compra" class="input">
+                        <gb-message *ngIf="compraForm.get('dataCompra').errors?.required"
+                            text="A data da compra é obrigatória!">
+                        </gb-message>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <input currencyMask formControlName="valorCompra" placeholder="Valor da compra" class="input">
+                        <gb-message *ngIf="compraForm.get('valorCompra').errors?.required"
+                            text="O valor da compra é obrigatório!">
+                        </gb-message>
+                    </div>
+                </div>
+                <div class="column is-narrow">
+                    <button (click)="voltarListaCompra()" class="button is-link">
+                        <span>Voltar</span>
+                        <span class="icon is-small">
+                            <i class="fa fa-undo"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="column is-narrow">
+                    <button [disabled]="compraForm.invalid" class="button is-primary">
+                        <span>Salvar</span>
+                        <span class="icon is-small">
+                            <i class="fa fa-check"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="columns is-centered is-multiline">
+    <div class="column is-10">
+        <div class="columns">
+            <div class="column">
+                <h3 class="subtitle">Lista de compras</h3>
+            </div>
+            <div class="column">
+                <div class="is-pulled-right">
+                    <button (click)="cadastrarNovaCompra()" class="button is-primary">
+                        <span>Nova compra</span>
+                        <span class="icon is-small">
+                            <i class="fa fa-plus"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-10">
+        <table class="table is-fullwidth">
+            <thead>
+                <tr>
+                    <th># Item</th>
+                    <th>Código da compra</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>% Cashback</th>
+                    <th>Situação da compra</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let compra of compras; index as i">
+                    <th>{{i+1}}</th>
+                    <td>{{compra.codigoCompra}}</td>
+                    <td>{{compra.dataCompra | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{compra.valorCompra | currency: 'R$ '}}</td>
+                    <td>{{compra.porcentagemCashBack}}%</td>
+                    <td>{{compra.statusCompra}}</td>
+                </tr>
+                <tr *ngIf="!compras.length">
+                    <th colspan="6" align="center">Não há compras a serem exibidas</th>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th align="center" colspan="6">Total de cashback: {{getTotalCashback(compras) | currency: 'R$'}}
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

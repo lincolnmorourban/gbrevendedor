@@ -1,0 +1,4 @@
+<div *ngFor="let notify of notifys" class="is-fixed-top {{ getNotifyClass(notify) }}">
+    <button class="delete"></button>
+    {{notify.message}}
+</div>

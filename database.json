@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$42/wJaEiNCQ/e2ND9uj2OugwSTrGoXq2iDCC4Y8KcNGmlbKcmlNfG",
+      "fullName": "User teste",
+      "cpf": "22843816009",
+      "id": 1
+    }
+  ],
+  "compras": [
+    {
+      "codigoCompra": "1234",
+      "dataCompra": "2020-02-11",
+      "valorCompra": 1240,
+      "userId": 1,
+      "statusCompra": "Em validação",
+      "porcentagemCashBack": 10,
+      "id": 1
+    }
+  ]
+}

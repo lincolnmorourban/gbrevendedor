@@ -1,0 +1,58 @@
+<div class="columns is-centered is-multiline">
+    <div class="box">
+
+        <div class="column is-12">
+            <h4 class="subtitle has-text-centered">Cadastrar novo revendedor</h4>
+        </div>
+
+        <div class="column is-12">
+            <div class="columns is-centered">
+                <form [formGroup]="cadastroForm" class="form" (submit)="cadastrar()">
+                    <div class="column">
+                        <div class="field">
+                            <input #emailInput formControlName="email" placeholder="E-mail" class="input" autofocus>
+                            <gb-message *ngIf="cadastroForm.get('email').errors?.required"
+                                text="O e-mail é obrigatório!">
+                            </gb-message>
+                            <gb-message *ngIf="cadastroForm.get('email').errors?.email" text="E-mail inválido!">
+                            </gb-message>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <input formControlName="fullName" placeholder="Nome completo" class="input">
+                            <gb-message *ngIf="cadastroForm.get('fullName').errors?.required"
+                                text="O nome completo é obrigatório!">
+                            </gb-message>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <input class="input" maxlength="14" formControlName="cpf" placeholder="CPF"
+                                mask="000.000.000-00">
+                            <gb-message *ngIf="cadastroForm.get('cpf').errors?.required" text="O CPF é obrigatório!">
+                            </gb-message>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <input formControlName="password" type="password" placeholder="Senha" class="input">
+                            <gb-message *ngIf="cadastroForm.get('password').errors?.required"
+                                text="A senha é obrigatória!">
+                            </gb-message>
+                            <gb-message *ngIf="cadastroForm.get('password').errors?.minlength"
+                                text="A senha deve conter no mínio 6 caracteres!">
+                            </gb-message>
+                        </div>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <button [disabled]="cadastroForm.invalid" class="button is-primary">Salvar</button>
+                    </div>
+
+                    <p class="has-text-centered">Já é um revendedor? <a [routerLink]="['']">Faça o login!</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
